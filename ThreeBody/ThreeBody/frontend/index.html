@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>ThreeBody — Polyglot Simulator</title>
+<link rel="stylesheet" href="/src/ui/styles.css" />
+</head>
+<body>
+<canvas id="gl"></canvas>
+<canvas id="overlay"></canvas>
+<div id="hud">
+  <h1>ThreeBody</h1>
+  <div id="status">connecting…</div>
+  <div id="coords"></div>
+</div>
+<div id="panel">
+  <div id="panel-header">
+    <span>Controls</span>
+    <button id="collapse" title="Collapse panel" aria-label="Collapse panel">–</button>
+  </div>
+  <div id="panel-body">
+    <label>Preset
+      <select id="preset">
+        <option value="figure_eight">Figure Eight</option>
+        <option value="lagrange_l1">Lagrange L1</option>
+        <option value="chaos_dance">Chaos Dance</option>
+      </select>
+    </label>
+    <label>Gaussian blur <input id="gauss" type="range" min="0" max="1" step="0.01" value="0.6" /></label>
+    <label>Motion blur   <input id="motion" type="range" min="0" max="1" step="0.01" value="0.35" /></label>
+    <label>Volumetric light <input id="volight" type="range" min="0" max="1" step="0.01" value="0.55" /></label>
+    <label>Volumetric fog   <input id="vofog" type="range" min="0" max="1" step="0.01" value="0.4" /></label>
+    <label>Particles <input id="pcount" type="range" min="500" max="20000" step="100" value="4000" /></label>
+    <div class="section">Overlay</div>
+    <label class="check"><input id="grid-on" type="checkbox" checked /> Grid</label>
+    <label class="check"><input id="axes-on" type="checkbox" checked /> X / Y / Z axes</label>
+    <label class="inline">Grid unit
+      <select id="grid-unit">
+        <option value="absolute">Absolute</option>
+        <option value="pixels">Pixels (px)</option>
+        <option value="cm">Centimeters (cm)</option>
+      </select>
+    </label>
+    <label class="check"><input id="coords-on" type="checkbox" checked /> Star coords (top-left)</label>
+    <label class="inline">Coords unit
+      <select id="coords-unit">
+        <option value="absolute">Absolute</option>
+        <option value="pixels">Pixels (px)</option>
+        <option value="cm">Centimeters (cm)</option>
+      </select>
+    </label>
+    <div class="section">Camera</div>
+    <label>Rotate <input id="cam-az" type="range" min="-180" max="180" step="1" value="90" /></label>
+    <label>Tilt <input id="cam-el" type="range" min="-89" max="89" step="1" value="-53" /></label>
+    <label>Zoom <input id="cam-dist" type="range" min="1" max="80" step="0.5" value="10" /></label>
+    <button id="toggle">Pause</button>
+  </div>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

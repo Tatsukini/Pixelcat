@@ -1,0 +1,13 @@
+# Python runtime dependencies for the local backend.
+#
+# Lower bounds only: pip picks the newest release that ships a wheel for your
+# Python version. Hard pins here previously broke installs on Python 3.13+,
+# because numpy==1.26.4 has no wheel for those versions.
+#
+# Known-good combination (Windows, CPython 3.14):
+#   fastapi 0.143.2, uvicorn 0.54.0, websockets 17.2, numpy 2.5.4, pydantic 2.14.1
+fastapi>=0.115
+uvicorn[standard]>=0.30
+websockets>=12.0
+numpy>=1.26
+pydantic>=2.9
